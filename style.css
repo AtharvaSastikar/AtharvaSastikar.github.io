@@ -2,114 +2,120 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #ECF0F1; /* Off White */
-  color: #2C3E50; /* Dark Blue-Grey */
+  background-color: #ECF0F1; /* Very Light Gray */
+  color: #555555; /* Neutral dark */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #2C3E50; /* Dark Blue-Grey */
-  color: #ECF0F1; /* Off White */
+  background-color: #222222; /* Deep neutral */
+  color: #ECF0F1;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 600;
 }
 
 header p {
-  font-size: 1.2rem;
-  color: #BDC3C7; /* Light Grey */
+  font-size: 1.1rem;
+  color: #BDC3C7;
+  margin-top: 0.5rem;
 }
 
 /* Navigation */
 nav {
-  background-color: #BDC3C7; /* Light Grey */
+  background-color: #7F8C8D; /* Neutral Gray */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border-bottom: 1px solid #7F8C8D; /* Greyish Cyan */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 nav a {
-  color: #2C3E50;
+  color: #ffffff;
   text-decoration: none;
   padding: 1rem 1.5rem;
   display: inline-block;
-  transition: background-color 0.3s;
   font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-  background-color: #7F8C8D; /* Hover effect with Greyish Cyan */
-  border-radius: 6px;
+  background-color: #555555;
   color: #ECF0F1;
+  border-radius: 4px;
 }
 
 /* Sections */
 section {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   max-width: 1000px;
   margin: auto;
-  background-color: #ECF0F1;
 }
 
 h2 {
-  color: #34495E; /* Midnight Blue */
+  color: #222222;
   margin-bottom: 1rem;
-  border-left: 4px solid #34495E;
-  padding-left: 0.5rem;
+  border-left: 4px solid #7F8C8D;
+  padding-left: 0.75rem;
+  font-size: 1.8rem;
 }
 
 /* Project Cards */
 .project-card {
   background-color: #ffffff;
   border: 1px solid #BDC3C7;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+  border-radius: 16px;
+  padding: 2rem;
   margin-bottom: 2rem;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .project-card h3 {
-  color: #2C3E50;
-  margin-bottom: 0.5rem;
+  color: #222222;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
 }
 
 .project-details {
   margin-top: 1rem;
-  color: #34495E;
+  color: #7F8C8D;
+  font-size: 0.95rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  background-color: #34495E;
-  color: #ECF0F1;
-  padding: 1rem;
-  margin-top: 2rem;
+  background-color: #222222;
+  color: #BDC3C7;
+  padding: 1.5rem;
+  font-size: 0.9rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   nav a {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
   }
 
   section {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 }
