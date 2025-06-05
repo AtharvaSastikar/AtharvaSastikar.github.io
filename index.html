@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="styles.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atharva Sastikar - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -33,31 +33,53 @@
 
       <div class="project-card project">
         <h3>ETL Pipeline using Airflow for House Data Analysis</h3>
-        <p><strong>Technologies:</strong> Apache Airflow, Python, AWS S3, AWS QuickSight, Data Cleaning, Data Visualization</p>
+        <p><strong>Technologies:</strong> Apache Airflow, Python, Pandas, AWS S3, XCom, DAG Scheduling</p>
         <p>
-          This project involved creating an automated ETL pipeline to fetch house data from AWS S3, clean and transform it, then load the processed data back to S3. The cleaned data was then visualized using AWS QuickSight to generate insightful dashboards for analysis and decision making. This pipeline enabled scalable and efficient data processing and reporting.
+          Built a production-ready ETL pipeline using Apache Airflow that automates daily extraction, transformation, and loading of real estate data. The pipeline:
+        </p>
+        <ul>
+          <li>Extracts raw CSV data from a local directory</li>
+          <li>Cleans and formats columns (dates, strings, price fields)</li>
+          <li>Adds new metrics like <code>price_per_sqft</code> and <code>holding_period</code></li>
+          <li>Loads cleaned data to AWS S3 using Airflow’s S3Hook</li>
+          <li>Utilizes XCom for inter-task communication between extract, transform, and load phases</li>
+        </ul>
+        <p>
+          🔗 <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository</a>
         </p>
       </div>
 
       <div class="project-card project">
         <h3>YouTube Transcript Summarizer</h3>
-        <p><strong>Technologies:</strong> Python, NLP, Hugging Face Transformers, Facebook's BART Model, Large Language Models (LLMs), Flask</p>
+        <p><strong>Technologies:</strong> Python, Hugging Face Transformers, Facebook BART Model, NLP, Flask</p>
         <p>
-          Developed a YouTube transcript summarizer using advanced NLP techniques and transformer models. This tool extracts video transcripts via YouTube API, preprocesses text with tokenization and sentence ranking, then generates concise summaries using Facebook's BART model. The project is deployed as a Flask web app providing an intuitive interface for users to get quick video summaries, enhancing content accessibility and saving viewer time.
+          Developed an NLP-powered web application to summarize YouTube video transcripts using transformer models. This tool:
         </p>
+        <ul>
+          <li>Uses the YouTube API to fetch video transcripts</li>
+          <li>Applies tokenization and summarization via Facebook's BART model</li>
+          <li>Deployed using Flask for seamless browser-based interaction</li>
+          <li>Improves accessibility and content skimming for long videos</li>
+        </ul>
         <p>
-          This project highlights practical skills in API integration, transformer-based NLP, and building AI-powered applications to improve digital content consumption.
+          Demonstrates skills in LLM integration, API consumption, and building AI-first applications for productivity.
         </p>
       </div>
 
       <div class="project-card project">
         <h3>Pharmaceutical Sales Data Dashboard</h3>
-        <p><strong>Technologies:</strong> Python, SQL, Tableau, AWS Redshift, Data Modeling</p>
+        <p><strong>Technologies:</strong> SQL, Tableau, AWS Redshift, Python, Data Modeling</p>
         <p>
-          Created an interactive sales data dashboard for PharmaACE using Tableau connected to AWS Redshift. The project involved querying large-scale pharmaceutical sales data, cleaning and modeling it for efficient retrieval, and designing visualizations that provide actionable insights on sales trends, regional performance, and product demand.
+          Built a dynamic dashboard to visualize large-scale pharmaceutical sales data. This project:
         </p>
+        <ul>
+          <li>Fetched and modeled structured sales data from AWS Redshift</li>
+          <li>Created interactive Tableau dashboards for KPIs such as regional sales, product-wise performance, and growth rates</li>
+          <li>Enabled slice-and-dice analytics for cross-functional teams</li>
+          <li>Supported data storytelling for commercial insights in the pharma domain</li>
+        </ul>
         <p>
-          The dashboard supports dynamic filtering and drill-down capabilities, empowering stakeholders to make data-driven decisions that improve sales strategies and market reach.
+          Aimed at enhancing visibility into product demand, marketing ROI, and strategic planning.
         </p>
       </div>
 
