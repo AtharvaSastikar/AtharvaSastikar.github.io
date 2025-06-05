@@ -1,103 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Atharva Sastikar - Data Engineer Portfolio</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #f5f5f5;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 15px;
-      padding: 40px 60px;
-      max-width: 600px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    h1 {
-      font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #00e5ff;
-      text-shadow: 0 0 8px #00e5ff;
-    }
-
-    p.subtitle {
-      font-size: 1.2rem;
-      color: #a0d8f7;
-      margin-bottom: 30px;
-      letter-spacing: 1.2px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      font-weight: 600;
-      color: #1e3c72;
-      background: #00e5ff;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 6px 15px rgba(0, 229, 255, 0.5);
-    }
-
-    .btn:hover {
-      background: #00b8d4;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 184, 212, 0.7);
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #7aa9c7;
-    }
-
-    a.footer-link {
-      color: #00e5ff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a.footer-link:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>Atharva Sastikar - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
+
+  <header>
     <h1>Atharva Sastikar</h1>
-    <p class="subtitle">Data Engineer | ML & NLP Enthusiast | ETL & Big Data Specialist</p>
-    <a href="#projects" class="btn">Explore My Projects</a>
-    <footer>
-      <p>Visit my <a class="footer-link" href="https://github.com/AtharvaSastikar" target="_blank" rel="noopener noreferrer">GitHub</a> for code and more.</p>
-    </footer>
-  </div>
+    <p>Data Engineer | ML & NLP Enthusiast | Cloud & ETL Specialist</p>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        Passionate about data engineering and building scalable ETL pipelines. Experienced with cloud data ecosystems and applying NLP & ML to solve real-world problems. Welcome to my portfolio showcasing some of my projects!
+      </p>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>ETL Pipeline using Airflow for House Data Analysis</h3>
+        
+        <p><strong>Problem Statement:</strong>  
+        Real estate companies and analysts often face challenges processing large volumes of housing data efficiently and accurately. Manual data workflows are time-consuming and prone to errors, and there's a growing need for scalable, automated solutions to clean and manage data for actionable insights.</p>
+        
+        <p><strong>Technologies & Tools Used:</strong>  
+        Apache Airflow, AWS S3, Python, Pandas, AWS QuickSight, Docker, SQL</p>
+        
+        <p><strong>Project Summary:</strong>  
+        This project builds an automated ETL pipeline orchestrated by Apache Airflow, which extracts raw house data from AWS S3, applies data cleaning and transformation using Python and Pandas, and loads the processed data back into S3. The pipeline supports scheduled execution and error handling, ensuring data consistency and freshness. The cleansed data is then used for visualization and dashboarding in AWS QuickSight, enabling stakeholders to derive meaningful business insights through interactive reports. This setup demonstrates the integration of cloud storage, data processing, orchestration, and visualization services to build end-to-end data solutions in a scalable and maintainable manner.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>YouTube Transcript Summarizer</h3>
+        
+        <p><strong>Problem Statement:</strong>  
+        With the exponential growth of video content, viewers struggle to quickly absorb key information from long videos. Automated summarization of video transcripts can enhance content accessibility and save time, but requires sophisticated NLP models to preserve context and meaning.</p>
+        
+        <p><strong>Technologies & Tools Used:</strong>  
+        Python, YouTube Data API, Large Language Models (LLMs), Hugging Face Transformers, Facebook's BART model, Flask (optional)</p>
+        
+        <p><strong>Project Summary:</strong>  
+        This project implements a YouTube transcript summarizer using state-of-the-art Large Language Models (LLMs). It fetches video transcripts via the YouTube Data API and leverages Facebook's BART text-to-text transformer model to generate concise and coherent summaries. The pipeline integrates powerful NLP techniques for preprocessing, including tokenization and sentence ranking, to improve summary quality and relevance. Optionally, the summarizer is deployed as a web app using Flask, providing users a seamless interface to input video URLs and receive quick summaries. This project highlights practical skills in API integration, transformer-based NLP, and building AI-powered applications for enhancing digital content consumption.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Atharva Sastikar | <a href="mailto:sastikaratharva55@gmail.com">Contact Me</a></p>
+  </footer>
+
 </body>
 </html>
