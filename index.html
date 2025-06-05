@@ -3,134 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atharva Sastikar - Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #2c2c2c;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #b03030;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #6c757d;
-    }
-    nav {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #b03030;
-      font-weight: 600;
-    }
-    .about {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
-    .about h2 {
-      margin-bottom: 15px;
-      color: #b03030;
-    }
-    .projects h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #b03030;
-    }
-    .project-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
-    }
-    .project-card h3 {
-      cursor: pointer;
-      color: #b03030;
-      font-size: 1.5rem;
-    }
-    .project-content {
-      display: none;
-      margin-top: 15px;
-    }
-    .project-card img {
-      max-width: 100%;
-      margin: 15px 0;
-      border-radius: 10px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 50px;
-    }
-  </style>
+  <title>Atharva Sastikar Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Atharva Sastikar</h1>
-    <p>Data Engineer | Python Enthusiast | Big Data & Cloud Explorer</p>
+    <p>Data Engineer | Python & Cloud Enthusiast</p>
   </header>
 
-  <div class="about">
-    <h2>About Me</h2>
-    <p>I am a passionate data engineer with experience in building ETL pipelines, cloud-based solutions, and NLP-driven applications. I enjoy solving real-world problems using data and automation. My recent work includes projects involving Airflow, AWS, yFinance, and YouTube Transcript summarization.</p>
-  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+  </nav>
 
-  <section class="projects">
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm Atharva — a Data Engineer passionate about building scalable data pipelines and transforming raw data into actionable insights. I specialize in Python, AWS, Airflow, and data analytics tools. Currently working at PharmaACE, I contribute to ETL development and clinical data processing projects using modern cloud technologies.</p>
+  </section>
+
+  <section id="projects" class="projects">
     <h2>Projects</h2>
 
     <div class="project-card">
-      <h3 onclick="toggleContent('etl')">ETL Pipeline Using Apache Airflow</h3>
-      <div class="project-content" id="etl">
-        <p>This project involves building an end-to-end ETL pipeline using Apache Airflow. It extracts real-estate data, performs various transformation steps like cleaning, formatting dates, calculating price per square foot, and loading data to both CSV and AWS S3. </p>
-        <img src="/mnt/data/116b58ba-fd4e-458d-ac8f-6d054d1635b6.png" alt="ETL Pipeline Image">
-        <p><strong>Skills Used:</strong> Airflow, Pandas, Python, AWS S3, DAGs</p>
-        <p><a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository</a></p>
+      <h3 onclick="toggleDetails(this)" style="cursor: pointer;">ETL Pipeline Using Apache Airflow for Real Estate Data Analysis</h3>
+      <div class="project-details" style="display: none;">
+        <img src="116b58ba-fd4e-458d-ac8f-6d054d1635b6.png" alt="ETL Pipeline Diagram" style="width: 100%; max-width: 500px; margin-bottom: 15px; border-radius: 8px;">
+        <p><strong>Problem Statement:</strong><br>
+        Real estate data is often scattered, unstructured, and manually processed, making timely market analysis inefficient. There is a need for an automated ETL (Extract, Transform, Load) pipeline to clean, transform, and store real-estate listings data for analytics and visualization.</p>
+        <p><strong>Technologies Used:</strong><br>
+        Apache Airflow, Python, Pandas, AWS S3, CSV, Docker, Jupyter Notebook, Crontab (for scheduling in production)</p>
+        <p><strong>Duration:</strong><br>2 weeks</p>
+        <p><strong>Workflow:</strong>
+          <ol>
+            <li>Extract real estate listing data from external sources (web, CSVs, APIs).</li>
+            <li>Transform using Pandas: clean nulls, format dates, and calculate derived metrics like price per square foot.</li>
+            <li>Load into CSV and AWS S3 bucket for downstream consumption.</li>
+            <li>Schedule the pipeline using Airflow DAGs to run daily.</li>
+          </ol>
+        </p>
+        <p><strong>Description:</strong><br>
+        The project involves building a robust and scalable ETL pipeline using <strong>Apache Airflow</strong> for real estate data processing and analysis. The objective was to automate the flow of data from raw input to a cleaned, analysis-ready format. This pipeline is designed to extract raw real estate data from CSV files or APIs, transform it to a usable structure, and store it in both local CSV format and cloud (AWS S3).
+        <br><br>
+        <strong>Airflow DAGs</strong> were configured to orchestrate the pipeline and handle failures. <strong>Python and Pandas</strong> were used to implement the transformation logic which includes removing missing entries, converting date formats, and calculating new metrics such as <code>price_per_sqft</code>. The processed data is saved locally for quick analysis and also pushed to <strong>AWS S3</strong> for long-term storage and integration with BI tools.
+        <br><br>
+        This project showcases how <strong>Airflow</strong>, when combined with lightweight tools like <strong>Pandas</strong>, <strong>Docker</strong>, and <strong>AWS</strong>, can handle the automation of complex data workflows in real estate or similar domains. The pipeline is modular and production-ready, with scope to expand into database storage or ML-based price prediction models.</p>
+        <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository here</a>
       </div>
     </div>
 
     <div class="project-card">
-      <h3 onclick="toggleContent('yt')">YouTube Transcript Summarizer</h3>
-      <div class="project-content" id="yt">
-        <p>This Chrome extension leverages the YouTube API and NLP tools to summarize long YouTube videos into concise and readable text. It enhances the viewer's experience by saving time and getting straight to the point of the video content.</p>
-        <img src="/mnt/data/9f3c74a9-11ee-43d0-9b01-1358ca5d1af8.png" alt="YouTube Summarizer Image">
-        <p><strong>Skills Used:</strong> JavaScript, Chrome Extension APIs, Python (NLP), YouTube API</p>
-        <p><a href="https://github.com/AtharvaSastikar/YouTube_Transcript_Summarizer" target="_blank">View GitHub Repository</a></p>
+      <h3 onclick="toggleDetails(this)" style="cursor: pointer;">YouTube Transcript Summarizer Using NLP</h3>
+      <div class="project-details" style="display: none;">
+        <img src="9f3c74a9-11ee-43d0-9b01-1358ca5d1af8.png" alt="YouTube Summarizer Image" style="width: 100%; max-width: 500px; margin-bottom: 15px; border-radius: 8px;">
+        <p><strong>Problem Statement:</strong><br>
+        Users often don’t have time to watch lengthy YouTube videos but still want to understand the core message. There’s a need for an automated tool that fetches YouTube video transcripts and summarizes them using NLP techniques.</p>
+        <p><strong>Technologies Used:</strong><br>
+        Python, Hugging Face Transformers, YouTube Transcript API, Streamlit, Spacy, NLTK, Flask, GitHub Pages (for deployment)</p>
+        <p><strong>Duration:</strong><br>3 weeks</p>
+        <p><strong>Workflow:</strong>
+          <ol>
+            <li>Extract transcript using YouTube Transcript API.</li>
+            <li>Preprocess text (tokenization, stopword removal).</li>
+            <li>Apply NLP summarization using transformer-based models (BART/T5).</li>
+            <li>Display output in a Streamlit web app.</li>
+          </ol>
+        </p>
+        <p><strong>Description:</strong><br>
+        The <strong>YouTube Transcript Summarizer</strong> project aims to provide a fast and accessible way for users to understand video content through concise summaries. Built using <strong>Python</strong> and <strong>NLP</strong>, the project automatically fetches a video's transcript using the <strong>YouTube Transcript API</strong>, processes the raw text, and generates a brief summary using transformer models like <strong>BART</strong> or <strong>T5</strong> from <strong>Hugging Face</strong>.
+        <br><br>
+        The summarization logic leverages <strong>SpaCy</strong> and <strong>NLTK</strong> for preprocessing tasks like tokenization and stopword removal. Once the text is cleaned, it is passed through a fine-tuned transformer model that delivers an extractive or abstractive summary depending on the user's needs. The frontend is built using <strong>Streamlit</strong>, providing a lightweight and interactive user experience. A Flask server handles backend requests, and the entire app is hosted using <strong>GitHub Pages</strong> for demonstration purposes.
+        <br><br>
+        The key challenge addressed is the lack of time users face in digesting long-form content. This tool bridges that gap with AI-driven summarization and demonstrates the real-world utility of modern NLP. The modular codebase allows for extension into multilingual summarization or keyword-based video indexing.</p>
+        <a href="https://github.com/AtharvaSastikar/Youtube-Transcript-Summarizer" target="_blank">View GitHub Repository here</a>
       </div>
     </div>
-
   </section>
 
   <footer>
-    &copy; 2025 Atharva Sastikar. All rights reserved.
+    <p>&copy; 2025 Atharva Sastikar. All rights reserved.</p>
   </footer>
 
   <script>
-    function toggleContent(id) {
-      const content = document.getElementById(id);
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    function toggleDetails(titleElement) {
+      const details = titleElement.nextElementSibling;
+      if (details.style.display === "none") {
+        details.style.display = "block";
+      } else {
+        details.style.display = "none";
+      }
     }
   </script>
 </body>
