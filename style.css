@@ -2,14 +2,14 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #ECF0F1; /* Very Light Gray */
-  color: #555555; /* Neutral dark */
+  background-color: #ECF0F1; /* Light background */
+  color: #555555; /* Soft neutral text */
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #222222; /* Deep neutral */
+  background-color: #7F8C8D; /* Neutral header */
   color: #ECF0F1;
   text-align: center;
   padding: 2.5rem 1rem;
@@ -30,7 +30,7 @@ header p {
 
 /* Navigation */
 nav {
-  background-color: #7F8C8D; /* Neutral Gray */
+  background-color: #BDC3C7;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -38,7 +38,7 @@ nav {
 }
 
 nav a {
-  color: #ffffff;
+  color: #222222;
   text-decoration: none;
   padding: 1rem 1.5rem;
   display: inline-block;
@@ -47,9 +47,15 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #555555;
-  color: #ECF0F1;
-  border-radius: 4px;
+  background-color: #7F8C8D;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+nav a.active {
+  background-color: #222222;
+  color: #ffffff;
+  border-radius: 6px;
 }
 
 /* Sections */
@@ -62,9 +68,19 @@ section {
 h2 {
   color: #222222;
   margin-bottom: 1rem;
-  border-left: 4px solid #7F8C8D;
-  padding-left: 0.75rem;
   font-size: 1.8rem;
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 40px;
+  height: 3px;
+  background-color: #BDC3C7;
 }
 
 /* Project Cards */
