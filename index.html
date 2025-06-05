@@ -1,94 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Atharva Sastikar - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atharva Sastikar | Data Engineer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      color: #2c2c2c;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #b03030;
+    }
+
+    header p {
+      color: #555;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #b03030;
+      font-weight: 600;
+    }
+
+    .bio {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .projects {
+      max-width: 900px;
+      margin: 20px auto 80px;
+    }
+
+    .projects h2 {
+      text-align: center;
+      color: #b03030;
+      margin-bottom: 30px;
+    }
+
+    .project-title {
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c2c2c;
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: background 0.2s;
+    }
+
+    .project-title:hover {
+      background: #f9f9f9;
+    }
+
+    .project-desc {
+      display: none;
+      background: #ffffff;
+      padding: 20px;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      color: #444;
+    }
+
+    .project-img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 40px 0;
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <a href="#bio">Bio</a>
+    <a href="#projects">Projects</a>
+    <a href="mailto:ajsastikar757@gmail.com">Contact</a>
+  </nav>
 
   <header>
     <h1>Atharva Sastikar</h1>
-    <p>Data Engineer | PharmaACE</p>
+    <p>Data Engineer | PharmaACE | ETL Pipelines | AWS | Python</p>
   </header>
 
-  <main>
-    <section id="about" class="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! I’m Atharva Sastikar, currently working as a Data Engineer at PharmaACE, a pharmaceutical analytics company. I recently completed my Diploma in Big Data Analytics from CDAC and am eager to advance my skills to the next level.
-      </p>
-      <p>
-        I am proficient in Python, SQL, Tableau, machine learning, natural language processing (NLP), Apache Airflow, and AWS. I’m passionate about leveraging these technologies to build efficient data pipelines and deliver valuable insights. Always curious and driven, I’m excited to explore new tools and innovations in the data and analytics space.
-      </p>
-      <p>
-        Feel free to reach out to me at <a href="mailto:ajsastikar757@gmail.com">ajsastikar757@gmail.com</a>. LinkedIn profile coming soon!
-      </p>
-    </section>
+  <section id="bio" class="bio">
+    <h2>About Me</h2>
+    <p>I’m a passionate Data Engineer working at PharmaACE, specializing in clinical trial data pipelines, AWS integration, and automated transformations using Python. I have experience building scalable ETL workflows using Airflow, Redshift, and S3, and I enjoy turning complex datasets into structured, analyzable information.</p>
+  </section>
 
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
 
-      <div class="project-card project">
-        <h3>ETL Pipeline using Airflow for House Data Analysis</h3>
-        <p><strong>Technologies:</strong> Apache Airflow, Python, Pandas, AWS S3, XCom, DAG Scheduling</p>
-        <p>
-          Built a production-ready ETL pipeline using Apache Airflow that automates daily extraction, transformation, and loading of real estate data. The pipeline:
-        </p>
-        <ul>
-          <li>Extracts raw CSV data from a local directory</li>
-          <li>Cleans and formats columns (dates, strings, price fields)</li>
-          <li>Adds new metrics like <code>price_per_sqft</code> and <code>holding_period</code></li>
-          <li>Loads cleaned data to AWS S3 using Airflow’s S3Hook</li>
-          <li>Utilizes XCom for inter-task communication between extract, transform, and load phases</li>
-        </ul>
-        <p>
-          🔗 <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository</a>
-        </p>
-      </div>
+    <div class="project-title" onclick="toggleDesc('etl')">ETL Pipeline using Airflow</div>
+    <div class="project-desc" id="etl">
+      <p>This project demonstrates an end-to-end ETL pipeline built in Airflow. It includes data cleaning, date transformation, and price-per-sqft calculation for housing data, with S3 integration for final output storage.</p>
+      <p><a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View Project on GitHub</a></p>
+      <img src="https://raw.githubusercontent.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow/main/assets/etl_flow.png" alt="ETL Flow" class="project-img" />
+    </div>
 
-      <div class="project-card project">
-        <h3>YouTube Transcript Summarizer</h3>
-        <p><strong>Technologies:</strong> Python, Hugging Face Transformers, Facebook BART Model, NLP, Flask</p>
-        <p>
-          Developed an NLP-powered web application to summarize YouTube video transcripts using transformer models. This tool:
-        </p>
-        <ul>
-          <li>Uses the YouTube API to fetch video transcripts</li>
-          <li>Applies tokenization and summarization via Facebook's BART model</li>
-          <li>Deployed using Flask for seamless browser-based interaction</li>
-          <li>Improves accessibility and content skimming for long videos</li>
-        </ul>
-        <p>
-          Demonstrates skills in LLM integration, API consumption, and building AI-first applications for productivity.
-        </p>
-      </div>
+    <div class="project-title" onclick="toggleDesc('yt')">YouTube Transcript Summarizer</div>
+    <div class="project-desc" id="yt">
+      <p>This NLP-based project fetches transcripts from YouTube videos and generates concise, meaningful summaries. Ideal for quick content reviews without watching the full video.</p>
+      <p><a href="https://github.com/AtharvaSastikar/YoutubeTranscriptSummarizer" target="_blank">View Project on GitHub</a></p>
+      <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*eiRL4e3EXkKhCUdvO8e-KA.png" alt="YTS Screenshot" class="project-img" />
+    </div>
 
-      <div class="project-card project">
-        <h3>Pharmaceutical Sales Data Dashboard</h3>
-        <p><strong>Technologies:</strong> SQL, Tableau, AWS Redshift, Python, Data Modeling</p>
-        <p>
-          Built a dynamic dashboard to visualize large-scale pharmaceutical sales data. This project:
-        </p>
-        <ul>
-          <li>Fetched and modeled structured sales data from AWS Redshift</li>
-          <li>Created interactive Tableau dashboards for KPIs such as regional sales, product-wise performance, and growth rates</li>
-          <li>Enabled slice-and-dice analytics for cross-functional teams</li>
-          <li>Supported data storytelling for commercial insights in the pharma domain</li>
-        </ul>
-        <p>
-          Aimed at enhancing visibility into product demand, marketing ROI, and strategic planning.
-        </p>
-      </div>
-
-    </section>
-  </main>
+  </section>
 
   <footer>
-    <p>© 2025 Atharva Sastikar | <a href="mailto:ajsastikar757@gmail.com">Contact Me</a></p>
+    <p>&copy; 2025 Atharva Sastikar. All rights reserved.</p>
   </footer>
 
+  <script>
+    function toggleDesc(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
