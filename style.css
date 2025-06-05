@@ -2,15 +2,15 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: #ffffff;
+  color: #444;
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #003366;
-  color: #fff;
+  background-color: #1a1a2e; /* deep navy */
+  color: #ffffff;
   text-align: center;
   padding: 2rem 1rem;
 }
@@ -22,62 +22,75 @@ header h1 {
 
 header p {
   font-size: 1.2rem;
-  color: #cce6ff;
+  color: #ccc;
 }
 
 /* Navigation */
 nav {
-  background-color: #007acc;
+  background-color: #eeeeee; /* light grey */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
 }
 
 nav a {
-  color: #fff;
+  color: #1a1a2e;
   text-decoration: none;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: inline-block;
   transition: background-color 0.3s;
+  font-weight: 500;
 }
 
 nav a:hover {
-  background-color: #005f99;
+  background-color: #ddd;
+  border-radius: 6px;
 }
 
 /* Sections */
 section {
-  padding: 2rem;
+  padding: 2rem 1rem;
   max-width: 1000px;
   margin: auto;
 }
 
 h2 {
-  color: #003366;
+  color: #1a1a2e;
   margin-bottom: 1rem;
+  border-left: 4px solid #1a1a2e;
+  padding-left: 0.5rem;
 }
 
 /* Project Cards */
 .project-card {
-  background-color: #fff;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.03);
   margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
 }
 
 .project-card h3 {
-  color: #007acc;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
 }
 
 .project-details {
   margin-top: 1rem;
+  color: #555;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  background-color: #003366;
+  background-color: #1a1a2e;
   color: #fff;
   padding: 1rem;
   margin-top: 2rem;
@@ -86,7 +99,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   nav a {
