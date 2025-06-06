@@ -2,130 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atharva Sastikar Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Atharva Sastikar</h1>
-    <p>Data Engineer | Python & Cloud Enthusiast</p>
-  </header>
 
-  <nav>
-    <a href="#about" class="active" onclick="showSection(event, 'about')">About</a>
-    <a href="#education" onclick="showSection(event, 'education')">Education</a>
-    <a href="#projects" onclick="showSection(event, 'projects')">Projects</a>
-  </nav>
+<header>
+  <h1>Atharva Sastikar</h1>
+  <p>Diploma in Big Data Analytics (CDAC)</p>
+</header>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Hello! I am Atharva Sastikar, a passionate Data Engineer dedicated to designing and developing scalable data pipelines that convert raw data into meaningful insights. My expertise spans across Python programming, cloud platforms like AWS, workflow orchestration with Apache Airflow, and various data analytics tools. Currently, I am contributing to cutting-edge ETL and clinical data processing projects at PharmaACE.</p>
-    <p>My core competencies include building automated, reliable, and modular data workflows that enable efficient data handling and business intelligence. I am deeply interested in leveraging modern cloud services and open-source tools to drive impactful analytics solutions. Outside work, I enjoy exploring new data technologies and continuously honing my skills through real-world projects and collaboration.</p>
-  </section>
+<nav>
+  <a href="#about" class="active">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="education" class="education" style="display: none;">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>10th Grade:</strong> Maharashtra State Board — 97.80% (2017)</li>
-      <li><strong>12th Grade:</strong> Telangana State Board of Intermediate Education — 95.70% (2019)</li>
-      <li><strong>Bachelor of Engineering (BE):</strong> DY Patil Institute of Technology — 8.8 CGPA (2023)</li>
-      <li><strong>CDAC Diploma:</strong> Institute of Advanced Computing and Software Development (IACSD) — 83%</li>
-    </ul>
-  </section>
+<section id="about">
+  <h2>About Me & Skills</h2>
+  <p>
+    I am a passionate data professional skilled in various tools and technologies related to big data, cloud computing, and data engineering. Below are some of the key skills and tasks I can perform:
+  </p>
+  <ul class="skills-list">
+    <li>Develop and maintain ETL pipelines for data ingestion and transformation.</li>
+    <li>Perform data cleaning, preprocessing, and feature engineering for analytics projects.</li>
+    <li>Use Python libraries such as Pandas, NumPy, and Scikit-learn for data analysis and modeling.</li>
+    <li>Work with cloud platforms like AWS for scalable data storage and computing.</li>
+    <li>Build and automate dashboards and reports using BI tools like Power BI or Tableau.</li>
+    <li>Write efficient SQL queries and manage databases for data extraction and manipulation.</li>
+    <li>Collaborate with cross-functional teams to deliver data-driven solutions.</li>
+  </ul>
+</section>
 
-  <section id="projects" class="projects" style="display: none;">
-    <h2>Projects</h2>
+<!-- Other sections like projects, contact, footer etc. -->
 
-    <div class="project-card">
-      <h3 onclick="toggleDetails(this)">ETL Pipeline Using Apache Airflow for Real Estate Data Analysis</h3>
-      <div class="project-details">
-        <img src="116b58ba-fd4e-458d-ac8f-6d054d1635b6.png" alt="ETL Pipeline Diagram" />
-        <p><strong>Problem Statement:</strong><br>
-        Real estate data is often scattered, unstructured, and manually processed, making timely market analysis inefficient. There is a need for an automated ETL (Extract, Transform, Load) pipeline to clean, transform, and store real-estate listings data for analytics and visualization.</p>
-        <p><strong>Technologies Used:</strong><br>
-        Apache Airflow, Python, Pandas, AWS S3, CSV, Docker, Jupyter Notebook, Crontab (for scheduling in production)</p>
-        <p><strong>Duration:</strong><br>2 weeks</p>
-        <p><strong>Workflow:</strong>
-          <ol>
-            <li>Extract real estate listing data from external sources (web, CSVs, APIs).</li>
-            <li>Transform using Pandas: clean nulls, format dates, and calculate derived metrics like price per square foot.</li>
-            <li>Load into CSV and AWS S3 bucket for downstream consumption.</li>
-            <li>Schedule the pipeline using Airflow DAGs to run daily.</li>
-          </ol>
-        </p>
-        <p><strong>Description:</strong><br>
-        The project involves building a robust and scalable ETL pipeline using <strong>Apache Airflow</strong> for real estate data processing and analysis. The objective was to automate the flow of data from raw input to a cleaned, analysis-ready format. This pipeline is designed to extract raw real estate data from CSV files or APIs, transform it to a usable structure, and store it in both local CSV format and cloud (AWS S3).
-        <br><br>
-        <strong>Airflow DAGs</strong> were configured to orchestrate the pipeline and handle failures. <strong>Python and Pandas</strong> were used to implement the transformation logic which includes removing missing entries, converting date formats, and calculating new metrics such as <code>price_per_sqft</code>. The processed data is saved locally for quick analysis and also pushed to <strong>AWS S3</strong> for long-term storage and integration with BI tools.
-        <br><br>
-        This project showcases how <strong>Airflow</strong>, when combined with lightweight tools like <strong>Pandas</strong>, <strong>Docker</strong>, and <strong>AWS</strong>, can handle the automation of complex data workflows in real estate or similar domains. The pipeline is modular and production-ready, with scope to expand into database storage or ML-based price prediction models.</p>
-        <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository here</a>
-      </div>
-    </div>
+<footer>
+  <p>Contact me on LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharva-sastikar-234800201</a></p>
+  <p>Phone: +91-XXXXXXXXXX</p>
+  <p>&copy; 2025 Atharva Sastikar</p>
+</footer>
 
-    <div class="project-card">
-      <h3 onclick="toggleDetails(this)">YouTube Transcript Summarizer Using NLP</h3>
-      <div class="project-details">
-        <img src="9f3c74a9-11ee-43d0-9b01-1358ca5d1af8.png" alt="YouTube Summarizer Image" />
-        <p><strong>Problem Statement:</strong><br>
-        Users often don’t have time to watch lengthy YouTube videos but still want to understand the core message. There’s a need for an automated tool that fetches YouTube video transcripts and summarizes them using NLP techniques.</p>
-        <p><strong>Technologies Used:</strong><br>
-        Python, Hugging Face Transformers, YouTube Transcript API, Streamlit, Spacy, NLTK, Flask, GitHub Pages (for deployment)</p>
-        <p><strong>Duration:</strong><br>3 weeks</p>
-        <p><strong>Workflow:</strong>
-          <ol>
-            <li>Extract transcript using YouTube Transcript API.</li>
-            <li>Preprocess text (tokenization, stopword removal).</li>
-            <li>Apply NLP summarization using transformer-based models (BART/T5).</li>
-            <li>Display output in a Streamlit web app.</li>
-          </ol>
-        </p>
-        <p><strong>Description:</strong><br>
-        The <strong>YouTube Transcript Summarizer</strong> project aims to provide a fast and accessible way for users to understand video content through concise summaries. Built using <strong>Python</strong> and <strong>NLP</strong>, the project automatically fetches a video's transcript using the <strong>YouTube Transcript API</strong>, processes the raw text, and generates a brief summary using transformer models like <strong>BART</strong> or <strong>T5</strong> from <strong>Hugging Face</strong>.
-        <br><br>
-        The summarization logic leverages <strong>SpaCy</strong> and <strong>NLTK</strong> for preprocessing tasks like tokenization and stopword removal. Once the text is cleaned, it is passed through a fine-tuned transformer model that delivers an extractive or abstractive summary depending on the user's needs. The frontend is built using <strong>Streamlit</strong>, providing a lightweight and interactive user experience. A Flask server handles backend requests, and the entire app is hosted using <strong>GitHub Pages</strong> for demonstration purposes.
-        <br><br>
-        The key challenge addressed is the lack of time users face in digesting long-form content. This tool bridges that gap with AI-driven summarization and demonstrates the real-world utility of modern NLP. The modular codebase allows for extension into multilingual summarization or keyword-based video indexing.</p>
-        <a href="https://github.com/AtharvaSastikar/Youtube-Transcript-Summarizer" target="_blank">View GitHub Repository here</a>
-      </div>
-    </div>
-  </section>
+<script>
+  // Optional: Add smooth scrolling for nav links
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 
-  <footer>
-    <p>&copy; 2025 Atharva Sastikar. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function toggleDetails(titleElement) {
-      const details = titleElement.nextElementSibling;
-      details.style.display = details.style.display === "block" ? "none" : "block";
-    }
-
-    function showSection(event, sectionId) {
-      event.preventDefault();
-
-      // Remove active class from all nav links
-      document.querySelectorAll('nav a').forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // Add active class to clicked nav link
-      event.target.classList.add('active');
-
-      // Hide all sections
-      document.querySelectorAll('section').forEach(sec => {
-        sec.style.display = 'none';
-      });
-
-      // Show selected section
-      const section = document.getElementById(sectionId);
-      if (section) section.style.display = 'block';
-
-      // Scroll to top of page for better UX
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
