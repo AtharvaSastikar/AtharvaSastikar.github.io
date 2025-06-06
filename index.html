@@ -1,58 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Atharva Sastikar Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Atharva Sastikar Portfolio</title>
+<style>
+  /* Base styling */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0 20px;
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15, #fb7185);
+    background-size: 1000% 1000%;
+    animation: gradientShift 20s ease infinite;
+    color: #1e1e1e;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+    background-color: rgba(26, 32, 44, 0.85);
+    color: #fff;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: fadeInDown 0.7s ease forwards;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+  }
+
+  /* Navigation */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    animation: fadeInUp 0.7s ease forwards;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2c5282;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px rgba(44, 82, 130, 0.15);
+  }
+
+  nav a:hover,
+  nav a.active {
+    background-color: #2b6cb0;
+    color: #fff;
+    box-shadow: 0 0 15px #2b6cb0;
+  }
+
+  /* Sections */
+  section {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+    background: #ffffffdd;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    animation: fadeIn 0.7s ease forwards;
+  }
+
+  section h2 {
+    border-bottom: 4px solid #2c5282;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    color: #2c5282;
+    font-size: 2rem;
+  }
+
+  /* About, paragraphs */
+  p {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  /* Skills */
+  ul.skills-list {
+    list-style: disc inside;
+    padding-left: 0;
+    color: #2c5282;
+  }
+
+  ul.skills-list li {
+    margin-bottom: 14px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: default;
+  }
+
+  /* Projects */
+  .project-card {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    cursor: pointer;
+    transition: box-shadow 0.25s ease;
+    border-radius: 10px;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 12px 25px rgb(44 82 130 / 0.25);
+  }
+
+  .project-card h3 {
+    margin-bottom: 12px;
+    color: #2c5282;
+    font-size: 1.4rem;
+    user-select: none;
+  }
+
+  .project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
+    opacity: 0;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .project-card.expanded .project-details {
+    max-height: 200px; /* enough to show content */
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  /* Contact */
+  #contact ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+  }
+
+  #contact ul li {
+    margin-bottom: 14px;
+  }
+
+  #contact a {
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  #contact a:hover {
+    color: #fb7185;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 18px 20px;
+    background-color: rgba(26, 32, 44, 0.85);
+    color: #ffffff;
+    border-radius: 20px 20px 0 0;
+    font-size: 0.95rem;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
 </head>
 <body>
 
 <header>
   <h1>Atharva Sastikar</h1>
-  <p>Diploma in Big Data Analytics (CDAC)</p>
+  <p>CDAC DBDA Student | Big Data Analyst</p>
 </header>
 
 <nav>
-  <a href="#about" class="active">About</a>
+  <a href="#about" class="active">About Me</a>
+  <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-  <h2>About Me & Skills</h2>
+  <h2>About Me</h2>
   <p>
-    I am a passionate data professional skilled in various tools and technologies related to big data, cloud computing, and data engineering. Below are some of the key skills and tasks I can perform:
+    Passionate about data analysis and cloud computing, currently pursuing the CDAC DBDA program. Experienced in building ETL pipelines, data cleaning, and leveraging cloud platforms to solve complex business problems.
   </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
   <ul class="skills-list">
-    <li>Develop and maintain ETL pipelines for data ingestion and transformation.</li>
-    <li>Perform data cleaning, preprocessing, and feature engineering for analytics projects.</li>
-    <li>Use Python libraries such as Pandas, NumPy, and Scikit-learn for data analysis and modeling.</li>
-    <li>Work with cloud platforms like AWS for scalable data storage and computing.</li>
-    <li>Build and automate dashboards and reports using BI tools like Power BI or Tableau.</li>
-    <li>Write efficient SQL queries and manage databases for data extraction and manipulation.</li>
-    <li>Collaborate with cross-functional teams to deliver data-driven solutions.</li>
+    <li>Data Collection & Cleaning using Python</li>
+    <li>Data Analysis with Pandas and NumPy</li>
+    <li>SQL Query Writing & Database Management</li>
+    <li>Building ETL Pipelines & Automation</li>
+    <li>Cloud Platforms: AWS and Azure Basics</li>
+    <li>Data Visualization with Matplotlib and Seaborn</li>
+    <li>Basic Machine Learning Model Development</li>
   </ul>
 </section>
 
-<!-- Other sections like projects, contact, footer etc. -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="project-card" onclick="toggleDetails(this.querySelector('h3'))">
+    <h3>Project 1: YouTube Transcript Summarizer</h3>
+    <div class="project-details">
+      <p>Extracted and summarized YouTube video transcripts using Python and NLP techniques to provide concise video content insights.</p>
+    </div>
+  </div>
+
+  <div class="project-card" onclick="toggleDetails(this.querySelector('h3'))">
+    <h3>Project 2: Financial Data ETL Pipeline</h3>
+    <div class="project-details">
+      <p>Developed an automated ETL pipeline to fetch, clean, and store pharmaceutical stock financial data into AWS Redshift using Python.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <ul>
+    <li>Email: <a href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></li>
+    <li>Phone: +91-XXXXXXXXXX</li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201/" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharva-sastikar-234800201</a></li>
+  </ul>
+</section>
 
 <footer>
-  <p>Contact me on LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharva-sastikar-234800201</a></p>
-  <p>Phone: +91-XXXXXXXXXX</p>
-  <p>&copy; 2025 Atharva Sastikar</p>
+  &copy; 2025 Atharva Sastikar. All rights reserved.
 </footer>
 
 <script>
-  // Optional: Add smooth scrolling for nav links
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+  function toggleDetails(titleElement) {
+    const card = titleElement.parentElement;
+    card.classList.toggle('expanded');
+  }
 </script>
 
 </body>
