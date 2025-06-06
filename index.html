@@ -49,6 +49,24 @@
       text-align: center;
       background-color: var(--accent-color);
       color: white;
+      position: relative;
+    }
+
+    #theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 15px;
+      font-size: 14px;
+      background-color: white;
+      color: var(--accent-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #theme-toggle:hover {
+      opacity: 0.9;
     }
 
     header h1 {
@@ -90,6 +108,10 @@
       margin-right: auto;
     }
 
+    .contact-skills h3 {
+      margin-top: 20px;
+    }
+
     .project-card {
       background-color: rgba(0,0,0,0.05);
       padding: 15px;
@@ -116,26 +138,16 @@
       color: var(--accent-color);
     }
 
+    .white-link {
+      color: white;
+      font-weight: bold;
+    }
+
     footer {
       text-align: center;
       padding: 10px;
       background-color: var(--accent-color);
       color: white;
-    }
-
-    #theme-toggle {
-      margin-top: 15px;
-      padding: 8px 15px;
-      font-size: 14px;
-      background-color: white;
-      color: var(--accent-color);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #theme-toggle:hover {
-      opacity: 0.9;
     }
   </style>
 </head>
@@ -143,24 +155,6 @@
   <header>
     <h1>Atharva Sastikar</h1>
     <p>CDAC PG-DBDA | Data Engineer at PharmaACE</p>
-    <div class="contact-skills">
-      <h3>Skills & Expertise</h3>
-      <ul>
-        <li>Building and maintaining scalable ETL pipelines and data workflows</li>
-        <li>Strong proficiency in Python scripting, automation, and data transformation</li>
-        <li>Cloud platform experience: AWS (S3, Lambda, EC2) and workflow orchestration (Apache Airflow)</li>
-        <li>Clinical trial data processing and NLP-based text cleaning & analysis</li>
-        <li>Database management with Redshift and SQL query optimization</li>
-        <li>Data analytics and visualization using modern BI tools and Python libraries</li>
-        <li>Collaborative project development with Git and CI/CD pipelines</li>
-      </ul>
-      <h3>Contact</h3>
-      <ul>
-        <li>Phone: 9325581532</li>
-        <li>Email: <a href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201" target="_blank">linkedin.com/in/atharva-sastikar-234800201</a></li>
-      </ul>
-    </div>
     <button id="theme-toggle" aria-label="Toggle Theme">Switch Theme</button>
   </header>
 
@@ -172,8 +166,7 @@
 
   <section id="about" style="display: block;">
     <h2>About Me</h2>
-    <p>Hello! I am Atharva Sastikar, a passionate Data Engineer dedicated to designing and developing scalable data pipelines that convert raw data into meaningful insights. My expertise spans across Python programming, cloud platforms like AWS, workflow orchestration with Apache Airflow, and various data analytics tools. Currently, I am contributing to cutting-edge ETL and clinical data processing projects at PharmaACE.</p>
-    <p>My core competencies include building automated, reliable, and modular data workflows that enable efficient data handling and business intelligence. I am deeply interested in leveraging modern cloud services and open-source tools to drive impactful analytics solutions. Outside work, I enjoy exploring new data technologies and continuously honing my skills through real-world projects and collaboration.</p>
+    <p>Hello! I am Atharva Sastikar, a passionate Data Engineer dedicated to designing and developing scalable data pipelines that convert raw data into meaningful insights...</p>
   </section>
 
   <section id="education">
@@ -193,18 +186,9 @@
       <h3 onclick="toggleDetails(this)">ETL Pipeline Using Apache Airflow for Real Estate Data Analysis</h3>
       <div class="project-details">
         <img src="116b58ba-fd4e-458d-ac8f-6d054d1635b6.png" alt="ETL Pipeline Diagram" />
-        <p><strong>Problem Statement:</strong> Real estate data is often scattered, unstructured, and manually processed, making timely market analysis inefficient. There is a need for an automated ETL (Extract, Transform, Load) pipeline to clean, transform, and store real-estate listings data for analytics and visualization.</p>
-        <p><strong>Technologies Used:</strong> Apache Airflow, Python, Pandas, AWS S3, CSV, Docker, Jupyter Notebook, Crontab (for scheduling in production)</p>
+        <p><strong>Problem Statement:</strong> Real estate data is often scattered, unstructured, and manually processed...</p>
+        <p><strong>Technologies Used:</strong> Apache Airflow, Python, Pandas, AWS S3, CSV, Docker, Jupyter Notebook, Crontab</p>
         <p><strong>Duration:</strong> 2 weeks</p>
-        <p><strong>Workflow:</strong>
-          <ol>
-            <li>Extract real estate listing data from external sources (web, CSVs, APIs).</li>
-            <li>Transform using Pandas: clean nulls, format dates, and calculate derived metrics like price per square foot.</li>
-            <li>Load into CSV and AWS S3 bucket for downstream consumption.</li>
-            <li>Schedule the pipeline using Airflow DAGs to run daily.</li>
-          </ol>
-        </p>
-        <p><strong>Description:</strong> The project involves building a robust and scalable ETL pipeline using <strong>Apache Airflow</strong> for real estate data processing and analysis... <em>(rest kept exactly as you had)</em></p>
         <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository here</a>
       </div>
     </div>
@@ -213,20 +197,32 @@
       <h3 onclick="toggleDetails(this)">YouTube Transcript Summarizer Using NLP</h3>
       <div class="project-details">
         <img src="9f3c74a9-11ee-43d0-9b01-1358ca5d1af8.png" alt="YouTube Summarizer" />
-        <p><strong>Problem Statement:</strong> Users often don’t have time to watch lengthy YouTube videos but still want to understand the core message. There’s a need for an automated tool that fetches YouTube video transcripts and summarizes them using NLP techniques.</p>
-        <p><strong>Technologies Used:</strong> Python, Hugging Face Transformers, YouTube Transcript API, Streamlit, Spacy, NLTK, Flask, GitHub Pages (for deployment)</p>
+        <p><strong>Problem Statement:</strong> Users often don’t have time to watch lengthy YouTube videos...</p>
+        <p><strong>Technologies Used:</strong> Python, Hugging Face Transformers, YouTube Transcript API, Streamlit, Spacy, NLTK, Flask</p>
         <p><strong>Duration:</strong> 3 weeks</p>
-        <p><strong>Workflow:</strong>
-          <ol>
-            <li>Extract transcript using YouTube Transcript API.</li>
-            <li>Preprocess text (tokenization, stopword removal).</li>
-            <li>Apply NLP summarization using transformer-based models (BART/T5).</li>
-            <li>Display output in a Streamlit web app.</li>
-          </ol>
-        </p>
       </div>
     </div>
   </section>
+
+  <div class="contact-skills">
+    <h3>Skills & Expertise</h3>
+    <ul>
+      <li>Building and maintaining scalable ETL pipelines and data workflows</li>
+      <li>Strong proficiency in Python scripting, automation, and data transformation</li>
+      <li>Cloud platform experience: AWS (S3, Lambda, EC2) and workflow orchestration (Apache Airflow)</li>
+      <li>Clinical trial data processing and NLP-based text cleaning & analysis</li>
+      <li>Database management with Redshift and SQL query optimization</li>
+      <li>Data analytics and visualization using modern BI tools and Python libraries</li>
+      <li>Collaborative project development with Git and CI/CD pipelines</li>
+    </ul>
+
+    <h3>Contact</h3>
+    <ul>
+      <li>Phone: 9325581532</li>
+      <li>Email: <a class="white-link" href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></li>
+      <li>LinkedIn: <a class="white-link" href="https://www.linkedin.com/in/atharva-sastikar-234800201" target="_blank">linkedin.com/in/atharva-sastikar-234800201</a></li>
+    </ul>
+  </div>
 
   <footer>
     &copy; 2025 Atharva Sastikar | All Rights Reserved
