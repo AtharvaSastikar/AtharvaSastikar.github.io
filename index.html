@@ -3,206 +3,296 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Atharva Sastikar Portfolio</title>
+<title>Atharva Sastikar | Data Engineer & Analyst</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
 <style>
-  /* Base styling */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  /* Root variables for Theme 1: Navy Blue base with White & Light Grey highlights */
+  :root {
+    --bg-gradient: linear-gradient(135deg, #0f172a, #ffffff, #d1d5db);
+    --container-bg: rgba(15, 23, 42, 0.85);
+    --text-color: #f1f5f9;
+    --primary: #3b82f6; /* bright blue */
+    --secondary: #2563eb;
+    --accent: #38bdf8;
+    --shadow-color: rgba(56, 189, 248, 0.7);
+    --nav-bg: rgba(15, 23, 42, 0.9);
+  }
+
+  /* Theme 2: White base with Navy & Light Grey accents */
+  body.theme-2 {
+    --bg-gradient: linear-gradient(135deg, #ffffff, #0f172a, #d1d5db);
+    --container-bg: rgba(255, 255, 255, 0.85);
+    --text-color: #1f2937;
+    --primary: #0f172a; /* navy dark */
+    --secondary: #4b5563; /* grey */
+    --accent: #2563eb;
+    --shadow-color: rgba(37, 99, 235, 0.5);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Theme 3: Light Grey base with Navy & White accents */
+  body.theme-3 {
+    --bg-gradient: linear-gradient(135deg, #d1d5db, #0f172a, #ffffff);
+    --container-bg: rgba(209, 213, 219, 0.85);
+    --text-color: #374151;
+    --primary: #0f172a;
+    --secondary: #6b7280;
+    --accent: #3b82f6;
+    --shadow-color: rgba(59, 130, 246, 0.6);
+    --nav-bg: rgba(209, 213, 219, 0.9);
+  }
+
+  /* Reset & base styles */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
 
   body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0 20px;
-    background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15, #fb7185);
-    background-size: 1000% 1000%;
-    animation: gradientShift 20s ease infinite;
-    color: #1e1e1e;
-    overflow-x: hidden;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    transition:
+      background 0.8s ease,
+      color 0.6s ease;
   }
 
-  @keyframes gradientShift {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+  .container {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    padding: 20px 25px 60px;
+    background: var(--container-bg);
+    border-radius: 20px;
+    box-shadow: 0 0 40px var(--shadow-color);
+    transition:
+      background 0.8s ease,
+      box-shadow 0.8s ease;
   }
 
-  /* Header */
   header {
     text-align: center;
-    padding: 50px 20px 30px 20px;
-    background-color: rgba(26, 32, 44, 0.85);
-    color: #fff;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    animation: fadeInDown 0.7s ease forwards;
+    padding: 50px 20px 40px;
   }
 
   header h1 {
     font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
     margin-bottom: 10px;
-    letter-spacing: 2px;
+    text-shadow: 0 0 15px var(--primary);
+    transition: text-shadow 0.8s ease;
   }
 
   header p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 1.2px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px var(--accent);
+    transition:
+      color 0.8s ease,
+      text-shadow 0.8s ease;
   }
 
-  /* Navigation */
+  header a.resume-btn {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    user-select: none;
+    transition: color 0.3s ease;
+  }
+  header a.resume-btn:hover {
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--accent);
+  }
+
+  /* Nav */
   nav {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin: 30px 0;
-    animation: fadeInUp 0.7s ease forwards;
+    margin-bottom: 40px;
+    position: sticky;
+    top: 10px;
+    background: var(--nav-bg);
+    padding: 10px 0;
+    border-radius: 15px;
+    z-index: 100;
+    transition: background 0.8s ease;
   }
 
   nav a {
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
-    color: #2c5282;
-    padding: 10px 20px;
-    border-radius: 12px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-    user-select: none;
     font-size: 1.1rem;
-    box-shadow: 0 0 10px rgba(44, 82, 130, 0.15);
+    padding: 8px 18px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    user-select: none;
   }
 
   nav a:hover,
   nav a.active {
-    background-color: #2b6cb0;
-    color: #fff;
-    box-shadow: 0 0 15px #2b6cb0;
+    background-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  /* Theme toggle button */
+  #theme-toggle {
+    position: fixed;
+    right: 25px;
+    top: 20px;
+    background: var(--nav-bg);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 600;
+    box-shadow: 0 0 15px var(--shadow-color);
+    user-select: none;
+    transition:
+      background 0.6s ease,
+      color 0.6s ease,
+      box-shadow 0.6s ease;
+    z-index: 150;
+  }
+  #theme-toggle:hover {
+    background: var(--accent);
+    color: var(--bg-gradient);
+    box-shadow: 0 0 25px var(--accent);
   }
 
   /* Sections */
   section {
-    max-width: 850px;
-    margin: 0 auto 50px auto;
-    background: #ffffffdd;
-    padding: 35px 30px;
-    border-radius: 18px;
-    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
-    animation: fadeIn 0.7s ease forwards;
+    margin-bottom: 50px;
   }
 
   section h2 {
-    border-bottom: 4px solid #2c5282;
-    padding-bottom: 10px;
+    font-size: 2.5rem;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 8px;
     margin-bottom: 25px;
-    color: #2c5282;
-    font-size: 2rem;
+    text-shadow: 0 0 6px var(--primary);
+    transition: border-color 0.8s ease, text-shadow 0.8s ease;
   }
 
-  /* About, paragraphs */
-  p {
-    line-height: 1.7;
+  /* About */
+  #about p {
     font-size: 1.1rem;
-    color: #333;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   /* Skills */
   ul.skills-list {
-    list-style: disc inside;
-    padding-left: 0;
-    color: #2c5282;
+    list-style-type: none;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
   }
 
   ul.skills-list li {
-    margin-bottom: 14px;
+    background: var(--secondary);
+    padding: 12px 25px;
+    border-radius: 50px;
     font-weight: 600;
-    font-size: 1.1rem;
+    box-shadow: 0 0 12px var(--secondary);
     cursor: default;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  ul.skills-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--accent);
   }
 
   /* Projects */
   .project-card {
-    margin-bottom: 35px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e2e8f0;
+    background: var(--bg-gradient);
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 0 18px var(--shadow-color);
     cursor: pointer;
-    transition: box-shadow 0.25s ease;
-    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 20px auto;
+    max-width: 700px;
+    color: var(--text-color);
+    user-select: none;
   }
 
   .project-card:hover {
-    box-shadow: 0 12px 25px rgb(44 82 130 / 0.25);
+    box-shadow: 0 0 35px var(--accent);
+    transform: translateY(-8px);
   }
 
   .project-card h3 {
     margin-bottom: 12px;
-    color: #2c5282;
-    font-size: 1.4rem;
-    user-select: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: color 0.6s ease;
   }
 
   .project-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, opacity 0.35s ease;
-    opacity: 0;
-    font-size: 1rem;
-    color: #444;
+    font-weight: 500;
     line-height: 1.6;
-  }
-
-  .project-card.expanded .project-details {
-    max-height: 200px; /* enough to show content */
-    opacity: 1;
+    color: #ddd;
     margin-top: 10px;
+    transition: color 0.6s ease;
   }
 
   /* Contact */
   #contact ul {
     list-style: none;
     padding-left: 0;
-    font-size: 1.1rem;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   #contact ul li {
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    text-align: center;
   }
 
   #contact a {
-    color: #2c5282;
+    color: var(--primary);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.3s ease;
   }
 
   #contact a:hover {
-    color: #fb7185;
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--accent);
   }
 
   /* Footer */
   footer {
     text-align: center;
-    padding: 18px 20px;
-    background-color: rgba(26, 32, 44, 0.85);
-    color: #ffffff;
-    border-radius: 20px 20px 0 0;
-    font-size: 0.95rem;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+    padding: 20px 15px;
+    color: var(--text-color);
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--primary);
+    margin-top: 60px;
+    transition: color 0.8s ease, text-shadow 0.8s ease;
   }
 
   /* Animations */
-  @keyframes fadeInDown {
-    0% {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   @keyframes fadeInUp {
     0% {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(25px);
     }
     100% {
       opacity: 1;
@@ -210,86 +300,149 @@
     }
   }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
+  section, header, nav {
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  header { animation: fadeInUp 0.6s ease 0.2s forwards;}
+  nav { animation: fadeInUp 0.6s ease 0.4s forwards;}
+  section { animation: fadeInUp 0.6s ease 0.6s forwards;}
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    ul.skills-list {
+      flex-direction: column;
+      align-items: center;
     }
-    100% {
-      opacity: 1;
+    nav {
+      flex-wrap: wrap;
+      gap: 15px;
     }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Atharva Sastikar</h1>
-  <p>CDAC DBDA Student | Big Data Analyst</p>
-</header>
+<button id="theme-toggle" aria-label="Toggle Theme">🌗 Theme</button>
 
-<nav>
-  <a href="#about" class="active">About Me</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+<div class="container">
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Passionate about data analysis and cloud computing, currently pursuing the CDAC DBDA program. Experienced in building ETL pipelines, data cleaning, and leveraging cloud platforms to solve complex business problems.
-  </p>
-</section>
+  <header>
+    <h1>Atharva Sastikar</h1>
+    <p>Data Engineer & Big Data Analyst</p>
+    <a href="Atharva_Sastikar_Resume.pdf" download class="resume-btn" >⬇️ Download Resume</a>
+  </header>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul class="skills-list">
-    <li>Data Collection & Cleaning using Python</li>
-    <li>Data Analysis with Pandas and NumPy</li>
-    <li>SQL Query Writing & Database Management</li>
-    <li>Building ETL Pipelines & Automation</li>
-    <li>Cloud Platforms: AWS and Azure Basics</li>
-    <li>Data Visualization with Matplotlib and Seaborn</li>
-    <li>Basic Machine Learning Model Development</li>
-  </ul>
-</section>
+  <nav>
+    <a href="#about" class="active">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<section id="projects">
-  <h2>Projects</h2>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate data engineer and analyst with hands-on experience in ETL pipelines, cloud platforms, and data visualization. Skilled in Python, SQL, and Big Data technologies, I deliver actionable insights that drive business success.
+    </p>
+  </section>
 
-  <div class="project-card" onclick="toggleDetails(this.querySelector('h3'))">
-    <h3>Project 1: YouTube Transcript Summarizer</h3>
-    <div class="project-details">
-      <p>Extracted and summarized YouTube video transcripts using Python and NLP techniques to provide concise video content insights.</p>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python & Pandas</li>
+      <li>SQL & Data Warehousing</li>
+      <li>ETL Pipeline Development</li>
+      <li>AWS Cloud Basics</li>
+      <li>Data Visualization (Matplotlib, Seaborn)</li>
+      <li>Machine Learning Fundamentals</li>
+      <li>Linux & Bash Scripting</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card" onclick="toggleDetails(this)" tabindex="0" role="button" aria-pressed="false">
+      <h3>YouTube Transcript Summarizer</h3>
+      <div class="project-details" style="display:none;">
+        <p>Automated extraction and summarization of YouTube video transcripts using Python NLP, increasing video content accessibility.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="project-card" onclick="toggleDetails(this.querySelector('h3'))">
-    <h3>Project 2: Financial Data ETL Pipeline</h3>
-    <div class="project-details">
-      <p>Developed an automated ETL pipeline to fetch, clean, and store pharmaceutical stock financial data into AWS Redshift using Python.</p>
+    <div class="project-card" onclick="toggleDetails(this)" tabindex="0" role="button" aria-pressed="false">
+      <h3>Financial Data ETL Pipeline</h3>
+      <div class="project-details" style="display:none;">
+        <p>Developed an automated ETL pipeline that fetches, cleans, and uploads pharmaceutical stock financial data to AWS Redshift, reducing manual processing time by 60%.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <ul>
-    <li>Email: <a href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></li>
-    <li>Phone: +91-XXXXXXXXXX</li>
-    <li>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201/" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharva-sastikar-234800201</a></li>
-  </ul>
-</section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></li>
+      <li>Phone: <a href="tel:+919325581532">9325581532</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201/" target="_blank" rel="noopener noreferrer">linkedin.com/in/atharva-sastikar-234800201</a></li>
+    </ul>
+  </section>
 
-<footer>
-  &copy; 2025 Atharva Sastikar. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 Atharva Sastikar — All Rights Reserved
+  </footer>
+</div>
 
 <script>
-  function toggleDetails(titleElement) {
-    const card = titleElement.parentElement;
-    card.classList.toggle('expanded');
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 60;
+      if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+    });
+  });
+
+  // Toggle project details
+  function toggleDetails(card) {
+    const details = card.querySelector(".project-details");
+    const expanded = card.getAttribute("aria-pressed") === "true";
+    if (expanded) {
+      details.style.display = "none";
+      card.setAttribute("aria-pressed", "false");
+    } else {
+      details.style.display = "block";
+      card.setAttribute("aria-pressed", "true");
+    }
   }
+
+  // Theme toggle logic cycling 3 multi-color gradients
+  const themeBtn = document.getElementById("theme-toggle");
+  const themes = ["", "theme-2", "theme-3"];
+  let currentTheme = 0;
+
+  themeBtn.addEventListener("click", () => {
+    currentTheme = (currentTheme + 1) % themes.length;
+    document.body.className = themes[currentTheme];
+  });
+
+  // Keyboard accessibility for project cards
+  document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("keydown", e => {
+      if(e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleDetails(card);
+      }
+    });
+  });
 </script>
 
 </body>
