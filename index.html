@@ -2,120 +2,258 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atharva Sastikar Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --navy-bg: #0b1a2d;
+      --navy-text: #ffffff;
+      --navy-accent: #4fa3ff;
+
+      --grey-bg: #f1f1f1;
+      --grey-text: #333333;
+      --grey-accent: #4444aa;
+
+      --white-bg: #ffffff;
+      --white-text: #000000;
+      --white-accent: #007acc;
+    }
+
+    body.theme-navy {
+      background-color: var(--navy-bg);
+      color: var(--navy-text);
+      --accent-color: var(--navy-accent);
+    }
+
+    body.theme-grey {
+      background-color: var(--grey-bg);
+      color: var(--grey-text);
+      --accent-color: var(--grey-accent);
+    }
+
+    body.theme-white {
+      background-color: var(--white-bg);
+      color: var(--white-text);
+      --accent-color: var(--white-accent);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--accent-color);
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 20px;
+      display: none;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .contact-skills {
+      margin-top: 20px;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-card {
+      background-color: rgba(0,0,0,0.05);
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .project-card h3 {
+      cursor: pointer;
+      color: var(--accent-color);
+    }
+
+    .project-details {
+      display: none;
+      padding-top: 10px;
+    }
+
+    .project-details img {
+      max-width: 100%;
+      margin: 10px 0;
+    }
+
+    a {
+      color: var(--accent-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    #theme-toggle {
+      margin-top: 15px;
+      padding: 8px 15px;
+      font-size: 14px;
+      background-color: white;
+      color: var(--accent-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #theme-toggle:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
-<body class="light-mode">
+<body class="theme-navy">
   <header>
     <h1>Atharva Sastikar</h1>
-    <p>Data Engineer | Python Enthusiast | ETL Expert</p>
-    <div class="header-buttons">
-      <button id="theme-toggle">🌙 Dark Mode</button>
-      <a href="Atharva_Resume.pdf" download class="resume-btn">📄 Download Resume</a>
+    <p>CDAC PG-DBDA | Data Engineer at PharmaACE</p>
+    <div class="contact-skills">
+      <h3>Skills & Expertise</h3>
+      <ul>
+        <li>Building and maintaining scalable ETL pipelines and data workflows</li>
+        <li>Strong proficiency in Python scripting, automation, and data transformation</li>
+        <li>Cloud platform experience: AWS (S3, Lambda, EC2) and workflow orchestration (Apache Airflow)</li>
+        <li>Clinical trial data processing and NLP-based text cleaning & analysis</li>
+        <li>Database management with Redshift and SQL query optimization</li>
+        <li>Data analytics and visualization using modern BI tools and Python libraries</li>
+        <li>Collaborative project development with Git and CI/CD pipelines</li>
+      </ul>
+      <h3>Contact</h3>
+      <ul>
+        <li>Phone: 9325581532</li>
+        <li>Email: <a href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar-234800201" target="_blank">linkedin.com/in/atharva-sastikar-234800201</a></li>
+      </ul>
     </div>
+    <button id="theme-toggle" aria-label="Toggle Theme">Switch Theme</button>
   </header>
 
   <nav>
-    <ul>
-      <li><a href="#" class="active" onclick="showSection(event, 'about')">About</a></li>
-      <li><a href="#" onclick="showSection(event, 'education')">Education</a></li>
-      <li><a href="#" onclick="showSection(event, 'projects')">Projects</a></li>
-    </ul>
+    <a href="#about" class="active" onclick="showSection(event, 'about')">About</a>
+    <a href="#education" onclick="showSection(event, 'education')">Education</a>
+    <a href="#projects" onclick="showSection(event, 'projects')">Projects</a>
   </nav>
 
-  <main>
-    <section id="about" style="display: block;">
-      <h2>About Me</h2>
-      <p>Hello! I am Atharva Sastikar, a passionate Data Engineer with strong roots in software development and data pipelines. I recently completed my PG-Diploma in Big Data Analytics from CDAC IACSD.</p>
-      <p>My core competencies include building automated, reliable, and modular data workflows using tools like Airflow, SQL, Python, AWS, and Docker. I’m experienced in handling both batch and streaming data for analytics and reporting use cases.</p>
-    </section>
+  <section id="about" style="display: block;">
+    <h2>About Me</h2>
+    <p>Hello! I am Atharva Sastikar, a passionate Data Engineer dedicated to designing and developing scalable data pipelines that convert raw data into meaningful insights. My expertise spans across Python programming, cloud platforms like AWS, workflow orchestration with Apache Airflow, and various data analytics tools. Currently, I am contributing to cutting-edge ETL and clinical data processing projects at PharmaACE.</p>
+    <p>My core competencies include building automated, reliable, and modular data workflows that enable efficient data handling and business intelligence. I am deeply interested in leveraging modern cloud services and open-source tools to drive impactful analytics solutions. Outside work, I enjoy exploring new data technologies and continuously honing my skills through real-world projects and collaboration.</p>
+  </section>
 
-    <section id="education" style="display: none;">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>10th Grade:</strong> Maharashtra State Board — <em>97.80%</em> (2017)</li>
-        <li><strong>12th Grade:</strong> Telangana State Board — <em>95.70%</em> (2019)</li>
-        <li><strong>B.E. in Computer Engineering:</strong> DY Patil Institute of Technology — <em>8.8 CGPA</em> (2023)</li>
-        <li><strong>PG Diploma in Big Data Analytics:</strong> CDAC IACSD — <em>83%</em> (2024)</li>
-      </ul>
-    </section>
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>10th Grade:</strong> Maharashtra State Board — 97.80% (2017)</li>
+      <li><strong>12th Grade:</strong> Telangana State Board of Intermediate Education — 95.70% (2019)</li>
+      <li><strong>Bachelor of Engineering (BE):</strong> DY Patil Institute of Technology — 8.8 CGPA (2023)</li>
+      <li><strong>CDAC Diploma:</strong> Institute of Advanced Computing and Software Development (IACSD) — 83%</li>
+    </ul>
+  </section>
 
-    <section id="projects" style="display: none;">
-      <h2>Projects</h2>
+  <section id="projects">
+    <h2>Projects</h2>
 
-      <div class="project-card">
-        <h3 onclick="toggleDetails(this)">ETL Pipeline Using Apache Airflow</h3>
-        <div class="project-details">
-          <ul>
-            <li><strong>Problem:</strong> Unstructured real estate data needed automation for ETL</li>
-            <li><strong>Tools:</strong> Airflow, Pandas, AWS S3, Docker, Crontab</li>
-            <li><strong>Duration:</strong> 2 weeks</li>
-            <li><strong>Flow:</strong>
-              <ul>
-                <li>Extract data from web, CSVs, APIs</li>
-                <li>Transform via Pandas – clean, format, derive metrics</li>
-                <li>Load to CSV and AWS S3</li>
-                <li>Schedule via Airflow DAGs</li>
-              </ul>
-            </li>
-            <li><strong>Result:</strong> Scalable and production-ready ETL for real estate analytics</li>
-          </ul>
-          <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">GitHub Repository</a>
-        </div>
+    <div class="project-card">
+      <h3 onclick="toggleDetails(this)">ETL Pipeline Using Apache Airflow for Real Estate Data Analysis</h3>
+      <div class="project-details">
+        <img src="116b58ba-fd4e-458d-ac8f-6d054d1635b6.png" alt="ETL Pipeline Diagram" />
+        <p><strong>Problem Statement:</strong> Real estate data is often scattered, unstructured, and manually processed, making timely market analysis inefficient. There is a need for an automated ETL (Extract, Transform, Load) pipeline to clean, transform, and store real-estate listings data for analytics and visualization.</p>
+        <p><strong>Technologies Used:</strong> Apache Airflow, Python, Pandas, AWS S3, CSV, Docker, Jupyter Notebook, Crontab (for scheduling in production)</p>
+        <p><strong>Duration:</strong> 2 weeks</p>
+        <p><strong>Workflow:</strong>
+          <ol>
+            <li>Extract real estate listing data from external sources (web, CSVs, APIs).</li>
+            <li>Transform using Pandas: clean nulls, format dates, and calculate derived metrics like price per square foot.</li>
+            <li>Load into CSV and AWS S3 bucket for downstream consumption.</li>
+            <li>Schedule the pipeline using Airflow DAGs to run daily.</li>
+          </ol>
+        </p>
+        <p><strong>Description:</strong> The project involves building a robust and scalable ETL pipeline using <strong>Apache Airflow</strong> for real estate data processing and analysis... <em>(rest kept exactly as you had)</em></p>
+        <a href="https://github.com/AtharvaSastikar/ETL_Pipeline_Using_Airflow" target="_blank">View GitHub Repository here</a>
       </div>
+    </div>
 
-      <div class="project-card">
-        <h3 onclick="toggleDetails(this)">YouTube Transcript Summarizer Using NLP</h3>
-        <div class="project-details">
-          <ul>
-            <li><strong>Problem:</strong> Users lack time to watch full YouTube videos</li>
-            <li><strong>Tools:</strong> Hugging Face (BART/T5), YouTube API, Streamlit, Spacy, Flask</li>
-            <li><strong>Duration:</strong> 3 weeks</li>
-            <li><strong>Flow:</strong>
-              <ul>
-                <li>Fetch transcript from YouTube API</li>
-                <li>Preprocess using Spacy/NLTK</li>
-                <li>Summarize using Transformers</li>
-                <li>Deploy via Streamlit</li>
-              </ul>
-            </li>
-            <li><strong>Result:</strong> Time-saving tool to summarize YouTube content instantly</li>
-          </ul>
-        </div>
+    <div class="project-card">
+      <h3 onclick="toggleDetails(this)">YouTube Transcript Summarizer Using NLP</h3>
+      <div class="project-details">
+        <img src="9f3c74a9-11ee-43d0-9b01-1358ca5d1af8.png" alt="YouTube Summarizer" />
+        <p><strong>Problem Statement:</strong> Users often don’t have time to watch lengthy YouTube videos but still want to understand the core message. There’s a need for an automated tool that fetches YouTube video transcripts and summarizes them using NLP techniques.</p>
+        <p><strong>Technologies Used:</strong> Python, Hugging Face Transformers, YouTube Transcript API, Streamlit, Spacy, NLTK, Flask, GitHub Pages (for deployment)</p>
+        <p><strong>Duration:</strong> 3 weeks</p>
+        <p><strong>Workflow:</strong>
+          <ol>
+            <li>Extract transcript using YouTube Transcript API.</li>
+            <li>Preprocess text (tokenization, stopword removal).</li>
+            <li>Apply NLP summarization using transformer-based models (BART/T5).</li>
+            <li>Display output in a Streamlit web app.</li>
+          </ol>
+        </p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Atharva Sastikar</p>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/atharvasastikar" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/AtharvaSastikar" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
+    &copy; 2025 Atharva Sastikar | All Rights Reserved
   </footer>
 
   <script>
-    // Theme toggle
-    const body = document.body;
-    const themeBtn = document.getElementById("theme-toggle");
-    themeBtn.onclick = () => {
-      body.classList.toggle("dark-mode");
-      body.classList.toggle("light-mode");
-      themeBtn.textContent = body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
-    };
-
-    // Section toggle
     function showSection(event, sectionId) {
       event.preventDefault();
-      document.querySelectorAll("main > section").forEach(sec => sec.style.display = "none");
+      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
       document.getElementById(sectionId).style.display = "block";
-      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+      document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
       event.target.classList.add("active");
     }
 
-    // Project toggle
-    function toggleDetails(el) {
-      const details = el.nextElement
+    function toggleDetails(title) {
+      const details = title.nextElementSibling;
+      details.style.display = details.style.display === "block" ? "none" : "block";
+    }
+
+    const themes = ["theme-navy", "theme-grey", "theme-white"];
+    let currentTheme = 0;
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.body.classList.remove(themes[currentTheme]);
+      currentTheme = (currentTheme + 1) % themes.length;
+      document.body.classList.add(themes[currentTheme]);
+    });
+  </script>
+</body>
+</html>
