@@ -2,292 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Atharva Sastikar Portfolio</title>
   <style>
-    /* Reset and base styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
-      min-height: 100vh;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    /* Dark theme styles */
-    body.dark {
-      background-color: #121212;
-      color: #eee;
+      background-color: #0d1117;
+      color: #ffffff;
     }
 
     header {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-weight: 700;
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-    header p {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #666;
-    }
-    body.dark header p {
-      color: #bbb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      background-color: #161b22;
     }
 
-    /* Theme toggle button */
-    #theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background-color: #007bff;
-      border: none;
-      color: white;
+    .theme-toggle {
       padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
+      background-color: #238636;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s;
-      z-index: 1000;
-    }
-    #theme-toggle:hover {
-      background-color: #0056b3;
-    }
-    body.dark #theme-toggle {
-      background-color: #0d6efd;
-    }
-    body.dark #theme-toggle:hover {
-      background-color: #084298;
     }
 
-    main {
-      flex-grow: 1;
+    h1, h2, h3 {
+      color: #58a6ff;
     }
 
     section {
-      margin-bottom: 2rem;
+      padding: 2rem;
     }
 
-    /* Projects section */
-    #projects-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .project-button {
-      background-color: #007bff;
+    .project-list button {
+      margin: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      background-color: #21262d;
       border: none;
+      color: #c9d1d9;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .project-description {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #161b22;
+      border-radius: 12px;
+    }
+
+    .contact a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .resume-button {
+      margin-top: 1rem;
+      display: inline-block;
+      background-color: #238636;
       color: white;
       padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      min-width: 120px;
-      text-align: center;
-    }
-    .project-button:hover, .project-button.active {
-      background-color: #0056b3;
-    }
-    body.dark .project-button {
-      background-color: #0d6efd;
-    }
-    body.dark .project-button:hover, body.dark .project-button.active {
-      background-color: #084298;
-    }
-
-    /* Project description styling */
-    #project-description {
-      background-color: #e9ecef;
-      border-radius: 8px;
-      padding: 1rem;
-      font-size: 1rem;
-      white-space: pre-line;
-      min-height: 120px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    body.dark #project-description {
-      background-color: #1e1e1e;
-      color: #ddd;
-    }
-
-    /* Contact section */
-    #contact {
-      background-color: #007bff;
-      color: white;
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      align-items: center;
-    }
-    #contact a {
-      color: white;
-      font-weight: 700;
       text-decoration: none;
-      transition: color 0.3s;
-    }
-    #contact a:hover {
-      color: #d0e8ff;
+      border-radius: 8px;
     }
 
-    /* Download Resume button styling */
-    #download-resume {
-      background-color: #004085;
-      color: white;
-      border: none;
-      padding: 0.5rem 1.2rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    #download-resume:hover {
-      background-color: #002752;
-    }
-    body.dark #download-resume {
-      background-color: #0056b3;
-    }
-    body.dark #download-resume:hover {
-      background-color: #003974;
+    .light-theme {
+      background-color: #ffffff;
+      color: #000000;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      #contact {
-        flex-direction: column;
-        font-size: 1rem;
-      }
-      #projects-list {
-        justify-content: center;
-      }
+    .light-theme header {
+      background-color: #f0f0f0;
+    }
+
+    .light-theme .project-list button,
+    .light-theme .project-description {
+      background-color: #e4e4e4;
+      color: #000;
+    }
+
+    .light-theme h1, .light-theme h2, .light-theme h3 {
+      color: #0b5ed7;
+    }
+
+    .light-theme .contact a {
+      color: #000;
+    }
+
+    .light-theme .theme-toggle {
+      background-color: #0b5ed7;
     }
   </style>
 </head>
-<body>
-  <button id="theme-toggle" aria-label="Toggle light/dark theme">Change Theme</button>
 
+<body>
   <header>
     <h1>Atharva Sastikar</h1>
-    <p>Data Engineer | Python Developer | Pharma Analytics</p>
+    <button class="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
   </header>
 
-  <main>
-    <section id="projects">
-      <h2>Projects</h2>
-      <div id="projects-list">
-        <button class="project-button active" data-project="project1">YouTube Transcript Summarizer</button>
-        <button class="project-button" data-project="project2">Clinical Trial Data Pipeline</button>
-        <button class="project-button" data-project="project3">Pharma Financial Analysis</button>
-      </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a Data Engineer at PharmaACE with a strong foundation in clinical data pipelines,
+      ETL systems, and NLP applications. My professional experience includes working with 
+      Redshift, AWS S3, Python, and automation of financial and healthcare data workflows. 
+      I also hold a diploma in Big Data Analytics from CDAC.
+    </p>
+    <a class="resume-button" href="Atharva_Sastikar_Resume.pdf" download>Download Resume</a>
+  </section>
 
-      <div id="project-description" tabindex="0">
-        <!-- Dynamic project description goes here -->
-      </div>
-    </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Programming: Python, SQL</li>
+      <li>Cloud & DB: AWS Redshift, S3, PostgreSQL</li>
+      <li>ETL & Pipelines: Pandas, Automation, Staging Tables</li>
+      <li>Web Tech: HTML, CSS, JavaScript, Python Eel</li>
+      <li>Libraries & Tools: yfinance, FMP API, Transformers, NLTK, NumPy</li>
+    </ul>
+  </section>
 
-    <section id="contact-section">
-      <h2>Contact</h2>
-      <div id="contact">
-        <a href="mailto:sastikaratharva55@gmail.com" target="_blank" rel="noopener" aria-label="Email">sastikaratharva55@gmail.com</a>
-        <a href="https://www.linkedin.com/in/atharva-sastikar/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-        <a href="#" id="download-resume" aria-label="Download Resume" title="Download Resume">Download Resume</a>
-      </div>
-    </section>
-  </main>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <button onclick="showDescription('proj1')">YouTube Transcript Summarizer</button>
+      <button onclick="showDescription('proj2')">Redshift ETL & NLP Pipeline</button>
+      <button onclick="showDescription('proj3')">House Data ETL Pipeline</button>
+    </div>
+
+    <div class="project-description" id="proj1">
+      <h3>YouTube Transcript Summarizer</h3>
+      <p>
+        A Python-based application that extracts and summarizes YouTube video transcripts using NLP techniques. 
+        The tool integrates with the YouTube API and performs keyphrase extraction and text ranking to generate 
+        concise summaries.
+      </p>
+      <strong>Technologies:</strong> Python, NLP, YouTube API, Transformers
+    </div>
+
+    <div class="project-description" id="proj2">
+      <h3>Redshift ETL & NLP Clinical Trial Pipeline</h3>
+      <p>
+        Built an automated data pipeline to clean and transform large-scale clinical trial datasets using Python 
+        and AWS Redshift. Applied NLP techniques for parsing medical terms and ensuring schema consistency across 
+        staging tables.
+      </p>
+      <strong>Technologies:</strong> Python, Redshift, AWS S3, Pandas, SQL, NLP
+    </div>
+
+    <div class="project-description" id="proj3">
+      <h3>House Data ETL Pipeline</h3>
+      <p>
+        Developed a complete ETL pipeline that ingests, transforms, and stores real estate market data. This project 
+        included automated data collection from CSV and APIs, data cleaning using Pandas, and loading into an AWS Redshift 
+        data warehouse with schema validation.
+      </p>
+      <strong>Technologies:</strong> Python, Pandas, AWS S3, Redshift, SQL, ETL Automation
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sastikaratharva55@gmail.com"><strong>sastikaratharva55@gmail.com</strong></a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar"><strong>linkedin.com/in/atharva-sastikar</strong></a></p>
+  </section>
 
   <script>
-    // Project descriptions as you provided them, exact text
-    const projectDescriptions = {
-      project1: `YouTube Transcript Summarizer
------------------------------
-Developed a tool that extracts transcripts from YouTube videos and generates concise summaries.
-Used Python libraries for web scraping, NLP techniques for summarization, and Flask for UI.
-Improves information accessibility by converting long video content into short readable summaries.`,
-
-      project2: `Clinical Trial Data Pipeline
-------------------------------
-Created an ETL pipeline for processing clinical trial datasets.
-Implemented data cleaning, validation, and transformation using Python.
-Leveraged AWS Redshift for data warehousing and ensured data quality with automated tests.`,
-
-      project3: `Pharma Financial Analysis
-------------------------------
-Built scripts to fetch, process, and analyze pharmaceutical companies' financial data.
-Used APIs like yfinance and Financial Modeling Prep for data extraction.
-Produced reports on revenue trends, growth metrics, and financial ratios to aid investment decisions.`
-    };
-
-    // Initialize description area
-    const descriptionDiv = document.getElementById('project-description');
-    const buttons = document.querySelectorAll('.project-button');
-
-    function setActiveProject(projectId) {
-      buttons.forEach(btn => {
-        if (btn.dataset.project === projectId) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-      descriptionDiv.textContent = projectDescriptions[projectId];
+    function showDescription(id) {
+      const descs = document.querySelectorAll('.project-description');
+      descs.forEach(d => d.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
     }
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        setActiveProject(btn.dataset.project);
-      });
-    });
-
-    // Set initial active project description
-    setActiveProject('project1');
-
-    // Theme toggle functionality
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme === 'dark') {
-      document.body.classList.add('dark');
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
     }
-
-    themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      if (document.body.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
-    // Download Resume button (placeholder, add actual URL if available)
-    const downloadResumeBtn = document.getElementById('download-resume');
-    downloadResumeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Resume download not linked yet.');
-      // To enable actual download, replace alert with something like:
-      // window.open('path/to/your_resume.pdf', '_blank');
-    });
   </script>
 </body>
 </html>
