@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Atharva Sastikar Portfolio</title>
   <style>
     * {
@@ -31,16 +31,14 @@
       padding: 10px 15px;
       cursor: pointer;
       border-radius: 5px;
+      z-index: 1000;
     }
     h1, h2 {
       text-align: center;
     }
     h2 {
-      margin-top: 60px;
+      margin-top: 40px;
       color: #00e0ff;
-    }
-    .section {
-      margin-bottom: 60px;
     }
     ul.skills-list {
       display: flex;
@@ -57,11 +55,25 @@
       border-radius: 20px;
       font-weight: bold;
     }
-    .projects-list {
+    .nav-buttons {
+      text-align: center;
+      margin: 20px 0;
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .nav-buttons button {
+      background: #00e0ff;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      color: #000;
+      transition: background 0.3s;
+    }
+    .nav-buttons button:hover {
+      background: #00bcd4;
     }
     .project-button {
       background: #00e0ff;
@@ -72,19 +84,25 @@
       border-radius: 10px;
       color: #000;
       transition: background 0.3s;
+      margin: 10px auto;
+      display: block;
+      max-width: 300px;
+      text-align: center;
     }
     .project-button:hover {
       background: #00bcd4;
     }
     .project-description {
       display: none;
-      margin-top: 20px;
+      margin: 20px auto;
       background-color: #1e1e1e;
       padding: 20px;
       border-radius: 8px;
+      max-width: 800px;
     }
     .contact {
       text-align: center;
+      margin-top: 60px;
     }
     .contact a {
       color: white;
@@ -101,6 +119,7 @@
       font-weight: bold;
       border-radius: 10px;
       text-decoration: none;
+      max-width: 200px;
     }
 
     /* Light Theme */
@@ -118,8 +137,17 @@
     }
     body.light ul.skills-list li,
     body.light .project-button,
-    body.light .download-btn {
+    body.light .download-btn,
+    body.light .nav-buttons button {
       color: #000;
+    }
+
+    /* Hide all sections initially except aboutSkills */
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
     }
   </style>
 </head>
@@ -129,51 +157,53 @@
   <div class="container">
     <h1>Atharva Sastikar</h1>
 
-  <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am Atharva Sastikar, a dedicated and dynamic Data Engineer with a strong academic foundation in engineering and data analytics. I currently work at PharmaACE, where I specialize in developing scalable ETL pipelines, handling clinical and financial data workflows, and applying NLP techniques to automate and improve real-world business problems. I hold a PG Diploma in Big Data Analytics from CDAC and a Bachelor's in Engineering from DY Patil Institute of Technology, Pune.
-  </p>
-  <p>
-    My technical skillset includes Python, SQL, Redshift, AWS (S3, Lambda), JavaScript, HTML/CSS, and libraries like Pandas, NumPy, and Transformers. I’ve gained hands-on experience with tools like Streamlit, Flask, and PostgreSQL, and have worked extensively with financial APIs like yFinance and Financial Modeling Prep.
-  </p>
-  <p>
-    Beyond tech, I’m a quick learner with leadership qualities, a positive attitude, and a track record of team collaboration. My extracurricular achievements include winning gold and silver medals in Table Tennis and Tug of War at inter-college events, and I have also represented my school at the state level in Judo and Table Tennis.
-  </p>
-  <p>
-    Fluent in English, Hindi, Marathi, and Telugu, I enjoy poetry, music, and cooking — especially traditional Maharashtrian food. I believe in continuous growth and aim to contribute value to every organization I join through dedication, adaptability, and innovation.
-  </p>
-  <a class="resume-button" href="Atharva_Sastikar_Resume.pdf" download>Download Resume</a>
-</section>
-
-
-    <!-- Skills -->
-    <div class="section">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Python</li>
-        <li>AWS</li>
-        <li>Redshift</li>
-        <li>ETL</li>
-        <li>Pandas</li>
-        <li>SQL</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>NLP</li>
-        <li>yFinance</li>
-        <li>Streamlit</li>
-      </ul>
+    <div class="nav-buttons">
+      <button onclick="showSection('aboutSkills')">About & Skills</button>
+      <button onclick="showSection('projects')">Projects</button>
     </div>
 
-    <!-- Projects -->
-    <div class="section">
-      <h2>Projects</h2>
-      <div class="projects-list">
-        <button class="project-button" onclick="toggleDescription('proj1')">YouTube Transcript Summarizer</button>
-        <button class="project-button" onclick="toggleDescription('proj2')">House Data Pipeline</button>
-      </div>
+    <!-- About + Skills Section -->
+    <section id="aboutSkills" class="active">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I am Atharva Sastikar, a dedicated and dynamic Data Engineer with a strong academic foundation in engineering and data analytics. I currently work at PharmaACE, where I specialize in developing scalable ETL pipelines, handling clinical and financial data workflows, and applying NLP techniques to automate and improve real-world business problems. I hold a PG Diploma in Big Data Analytics from CDAC and a Bachelor's in Engineering from DY Patil Institute of Technology, Pune.
+        </p>
+        <p>
+          My technical skillset includes Python, SQL, Redshift, AWS (S3, Lambda), JavaScript, HTML/CSS, and libraries like Pandas, NumPy, and Transformers. I’ve gained hands-on experience with tools like Streamlit, Flask, and PostgreSQL, and have worked extensively with financial APIs like yFinance and Financial Modeling Prep.
+        </p>
+        <p>
+          Beyond tech, I’m a quick learner with leadership qualities, a positive attitude, and a track record of team collaboration. My extracurricular achievements include winning gold and silver medals in Table Tennis and Tug of War at inter-college events, and I have also represented my school at the state level in Judo and Table Tennis.
+        </p>
+        <p>
+          Fluent in English, Hindi, Marathi, and Telugu, I enjoy poetry, music, and cooking — especially traditional Maharashtrian food. I believe in continuous growth and aim to contribute value to every organization I join through dedication, adaptability, and innovation.
+        </p>
+        <a class="download-btn" href="Atharva_Sastikar_Resume.pdf" download>Download Resume</a>
+      </section>
 
+      <section id="skills" style="margin-top: 60px;">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>AWS</li>
+          <li>Redshift</li>
+          <li>ETL</li>
+          <li>Pandas</li>
+          <li>SQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>NLP</li>
+          <li>yFinance</li>
+          <li>Streamlit</li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <button class="project-button" onclick="toggleDescription('proj1')">YouTube Transcript Summarizer</button>
       <div class="project-description" id="proj1">
         <h3>YouTube Transcript Summarizer</h3>
         <p>
@@ -182,6 +212,7 @@
         <strong>Technologies:</strong> Python, NLP, HuggingFace Transformers, youtube-transcript-api, Streamlit
       </div>
 
+      <button class="project-button" onclick="toggleDescription('proj2')">House Data Pipeline</button>
       <div class="project-description" id="proj2">
         <h3>House Data Pipeline</h3>
         <p>
@@ -189,23 +220,38 @@
         </p>
         <strong>Technologies:</strong> Python, Pandas, AWS Redshift, SQL, Web Scraping, Tableau, AWS SNS
       </div>
-    </div>
+    </section>
 
-    <!-- Download Resume -->
-    <a href="Your_Resume_Link_Here.pdf" class="download-btn" target="_blank">Download Resume</a>
-
-    <!-- Contact -->
-    <div class="section contact">
+    <!-- Contact Section -->
+    <div class="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:sastikaratharva55@gmail.com">sastikaratharva55@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar" target="_blank">atharva-sastikar</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar" target="_blank" rel="noopener">atharva-sastikar</a></p>
     </div>
   </div>
 
   <script>
     function toggleDescription(id) {
       const desc = document.getElementById(id);
-      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+      if (desc.style.display === 'block') {
+        desc.style.display = 'none';
+      } else {
+        // Hide all project descriptions first
+        document.querySelectorAll('.project-description').forEach(d => d.style.display = 'none');
+        desc.style.display = 'block';
+      }
+    }
+
+    function showSection(sectionId) {
+      // Hide all main sections
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      // Show chosen section
+      const sec = document.getElementById(sectionId);
+      if (sec) sec.classList.add('active');
+      // Also hide all project descriptions when switching
+      document.querySelectorAll('.project-description').forEach(d => d.style.display = 'none');
+      // Scroll top on section change
+      window.scrollTo(0, 0);
     }
 
     function toggleTheme() {
