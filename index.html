@@ -186,14 +186,17 @@
       <p>LinkedIn: <a href="https://www.linkedin.com/in/atharva-sastikar" target="_blank" rel="noopener">atharva-sastikar</a></p>
     </section>
   </div>
+<!-- Theme Toggle Button with Emoji -->
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light-theme');
-      const btn = document.querySelector('.theme-toggle');
-      const isLight = document.body.classList.contains('light-theme');
-      btn.textContent = isLight ? 'Switch to Dark Theme' : 'Switch to Light Theme';
-    }
-  </script>
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    const btn = document.querySelector('.theme-toggle');
+    const isLight = document.body.classList.contains('light-theme');
+    btn.textContent = isLight ? '🌞' : '🌙';
+  }
+</script>
+
 </body>
 </html>
